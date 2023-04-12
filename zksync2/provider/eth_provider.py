@@ -28,7 +28,7 @@ class EthereumProvider:
     # GAS_LIMIT = 21000
     # DEFAULT_THRESHOLD = 2 ** 255
     DEPOSIT_GAS_PER_PUBDATA_LIMIT = 800
-    RECOMMENDED_DEPOSIT_L2_GAS_LIMIT = 10000000
+    RECOMMENDED_DEPOSIT_L2_GAS_LIMIT = 733664
     L1_MESSENGER_ADDRESS = '0x0000000000000000000000000000000000008008'
 
     def __init__(self,
@@ -127,7 +127,7 @@ class EthereumProvider:
 
         base_cost = self.get_base_cost(gas_price=gas_price,
                                        gas_per_pubdata_byte=gas_per_pubdata_byte,
-                                       gas_limit=gas_limit)
+                                       gas_limit=l2_gas_limit)
 
         if token.is_eth():
             value = base_cost + operator_tip + amount
